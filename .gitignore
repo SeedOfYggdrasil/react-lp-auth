@@ -1,0 +1,14 @@
+node_modules
+package-lock.json
+.env
+logs
+*.log
+.backups
+.vscode
+.devcontainer
+.codesandbox
+dist
+.templates
+.unused
+.github
+*.mp4

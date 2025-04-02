@@ -1,0 +1,62 @@
+/* Dashboard.css */
+
+@import url('./fonts.css');
+
+body {
+  max-height: 100%;
+  max-width: 100%;
+  background: #000;
+  color: #fff;
+}
+
+.dash-container {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.dash-hero {
+ 
+ display: flex;
+  flex-direction: column;
+  height: 100vh;
+    flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dash-hero h1 {
+  margin: 5px;
+  padding: 5px;
+  font-face: Guild, Helvetica, sans-serif;
+  font-size: 6em;
+  color: #fff;
+}
+
+.dash-hero h2 {
+  margin: 10px;
+  padding: 10px;
+  font-size: 4em;
+  color: #fff;
+}
+
+
+@media screen and (max-width: 700px) {
+  .dash-container {
+     padding: 20px;
+    width: 90%;  
+}
+
+  .dash-hero h1 {
+     min-width:  600px;
+     min-height: 200px;
+    font-size: 4em;
+    }
+.dash-hero h2 {
+    font-size: 2em;
+}
+
+}
+
