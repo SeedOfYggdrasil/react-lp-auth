@@ -7,6 +7,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import LandingPage from './pages/LandingPage'
 import Redirect from './components/Redirect'
 import Dashboard from './pages/Dashboard'
+import Editor from './pages/Editor'
 
 const App = () => {
   const auth = getAuth()
@@ -34,11 +35,11 @@ const App = () => {
               element={<LandingPage parentCallback={onAuthStateChanged} />}
             />
             <Route
-              path='/dashboard'
-              element={currentUser ? <Dashboard /> : <Redirect to='/' />}
+              path='/editor'
+              element={currentUser ? <Editor /> : <Redirect to='/' />}
             />
             <Route
-              path='/editor'
+              path='/dashboard'
               element={<Redirect to='/' />}
             />
             <Route
