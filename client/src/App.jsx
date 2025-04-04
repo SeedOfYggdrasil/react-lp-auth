@@ -7,7 +7,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import LandingPage from './pages/LandingPage'
 import Redirect from './components/Redirect'
 import Dashboard from './pages/Dashboard'
-import Editor from './pages/Editor'
+import EditorPage from './pages/EditorPage'
 
 const App = () => {
   const auth = getAuth()
@@ -36,7 +36,7 @@ const App = () => {
             />
             <Route
               path='/editor'
-              element={currentUser ? <Editor /> : <Redirect to='/' />}
+              element={currentUser ? <EditorPage /> : <Redirect to='/' />}
             />
             <Route
               path='/dashboard'

@@ -1,23 +1,23 @@
 import { } from 'react';
-import Banner from '../components/Banner'
-import Copyright from '../components/Copyright'
-import Editor from '../components/Editor'
-import '../css/EditorPage.css'
+import Navbar from '../components/Navbar';
+import Copyright from '../components/Copyright';
+import Editor from '../components/Editor';
+import '../css/EditorPage.css';
 
 const EditorPage = () => {
 
     return (
         <div className='editor-page'>
-            <header className='editor-header'>
-                <Banner />
-            </header>
+          <div className='banner'>  
+                <Navbar />
+          </div>  
 
-            <main className='editor-content'>
-                <h1>Untitled</h1>
+            <section className='content'>
+                <h1>Untitled Note</h1>
                 <Editor />
-            </main>
+            </section>
 
-            <footer className='editor-footer'>
+            <footer className='footer'>
                 <Copyright />
             </footer>
         </div>
