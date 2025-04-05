@@ -33,11 +33,11 @@ const Login = ({ closeModal, switchToRegister }) => {
       const auth = getAuth()
       await signInWithEmailAndPassword(auth, email, password)
        setSuccess('Logged in successfully. Redirecting...')
-       navigate('/dashboard')
+       navigate('/editor')
        closeModal()     
     } catch (error) {
        console.error('Error during login:', error)
-       setError(error.message)
+       setError('Incorrect email or password.')
        setLoading(false)
     } finally {
         setLoading(false)     

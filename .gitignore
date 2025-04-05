@@ -12,3 +12,4 @@ dist
 .unused
 .github
 *.mp4
+docker-compose.yaml

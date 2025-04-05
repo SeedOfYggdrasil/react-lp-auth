@@ -1,0 +1,30 @@
+/* Set default font-family */
+#container {
+  font-family: "Impact";
+  font-size: 18px;
+  height: 375px;
+}
+
+#container #toolbar-container.ql-toolbar {
+  padding: 10px;
+}
+
+.ql-snow .ql-picker.ql-font, .ql-bubble .ql-picker.ql-font {
+  width: 130px;
+}
+/* Set dropdown font-families */
+.ql-font span[data-value="impact"]::before, .ql-font span[data-label="Impact"]::before {
+  font-family: "Impact";
+}
+.ql-font span[data-value="courier"]::before, .ql-font span[data-label="Courier"]::before {
+  font-family: "Courier";
+}
+.ql-font span[data-value="comic"]::before, .ql-font span[data-label="Comic Sans MS"]::before {
+  font-family: "Comic Sans MS";
+}
+
+.ql-font-impact { font-family: 'Impact'; }
+.ql-font-courier { font-family: 'Courier'; }
+.ql-font-comic { font-family: 'Comic Sans MS'; }
+
+
