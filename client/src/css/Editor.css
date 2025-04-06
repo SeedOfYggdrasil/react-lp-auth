@@ -1,18 +1,28 @@
 /* Set default font-family */
 #container {
-  font-family: "Impact";
+  font-family: "Roboto";
   font-size: 18px;
-  height: 375px;
+  height: 100%;
+  color: #fff;
+  background: #000;
 }
 
-#container #toolbar-container.ql-toolbar {
+#container #toolbar-container .ql-toolbar {
   padding: 10px;
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
-.ql-snow .ql-picker.ql-font, .ql-bubble .ql-picker.ql-font {
+.ql-toolbar .ql-picker, .ql-font{
   width: 130px;
+  color: #fff;
 }
+
 /* Set dropdown font-families */
+.ql-font span[data-value="Roboto"]::before, .ql-font span[data-label="Roboto"]::before {
+  font-family: "Roboto";
+}
 .ql-font span[data-value="impact"]::before, .ql-font span[data-label="Impact"]::before {
   font-family: "Impact";
 }
@@ -23,6 +33,7 @@
   font-family: "Comic Sans MS";
 }
 
+.ql-font-roboto { font-family: 'Roboto'; };
 .ql-font-impact { font-family: 'Impact'; }
 .ql-font-courier { font-family: 'Courier'; }
 .ql-font-comic { font-family: 'Comic Sans MS'; }

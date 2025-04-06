@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import '../css/Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -48,15 +49,13 @@ const Navbar = () => {
             <span></span>
           </button>
           <a href="#">
-            <h4>
-              Awesome<span>logo</span>
-            </h4>
+            <img src={logo} />
           </a>
         </div>
 
         <div className={`navbar-menu ${menuActive ? 'active' : ''}`}>
           <ul className="navbar-nav">
-            <li className="active"><a href="#">Home</a></li>
+            <li className="active"><a href="#">Editor</a></li>
 
             <li className="navbar-dropdown">
               <a
@@ -67,7 +66,7 @@ const Navbar = () => {
                   toggleDropdown('categories');
                 }}
               >
-                Categories <i className="fa fa-angle-down"></i>
+                Dashboard<i className="fa fa-angle-down"></i>
               </a>
               <ul className={`dropdown ${dropdownOpen['categories'] ? 'show' : ''}`}>
                 <li><a href="#">Actions</a></li>
@@ -88,7 +87,7 @@ const Navbar = () => {
                   toggleDropdown('blog');
                 }}
               >
-                Blog <i className="fa fa-angle-down"></i>
+                Docs <i className="fa fa-angle-down"></i>
               </a>
               <ul className={`dropdown ${dropdownOpen['blog'] ? 'show' : ''}`}>
                 <li><a href="#">Some category</a></li>
@@ -100,9 +99,9 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Signin</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Sign Out</a></li>
           </ul>
         </div>
       </div>

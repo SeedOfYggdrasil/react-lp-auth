@@ -1,4 +1,4 @@
-/* LandingPage.css  */
+/* EditorPage.css  */
 
 @import url('../css/fonts.css');
 
@@ -6,7 +6,7 @@ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
 
 body {
@@ -25,50 +25,35 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  x-overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 .banner {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background: none;
-    margin: 0;
-    padding: 0;
-    z-index: 1000;
-}
-
-.editor-header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;  
-  background: #000;
+  height: 50px;
+  padding: 0;
+  margin: 0;
 }
 
-.editor-content {
-  position: relative;
+.content {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 20px;
-  margin: 20px;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  background: #000;
-  color: #fff;
-  flex: 1;
+  padding: 20px 75px;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  padding: 0 5px;
 }
 
 @media screen and (max-width: 700px) {
-
-    .editor-page {
+  .editor-page {
         padding: 10px;
-    }
+  }
 }
