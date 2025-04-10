@@ -1,0 +1,108 @@
+/* App.css */
+
+.edutor-wrapper {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  padding: 16px;
+
+
+}
+
+.mt-5 {
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #cccccc;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 8px;
+  margin: 80px 0 16px;
+  flex-wrap: wrap;
+}
+
+.form-select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(50,200,255,1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#textFormat {
+  display: flex;
+  gap: 4px;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(50,200,255,1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn.active {
+  opacity: 0.8;
+  background: rgba(50,200,255,0.5);
+  color: #fff;
+}
+
+.form-control {
+  background-color: #000;
+  border: 1px solid #4169e1;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.text-area {
+  border: 1px solid rgba(50,200,255,1);
+  border-radius: 16px;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  overflow-y: scroll;
+  margin-bottom: 24px;
+}
+
+.text-area [contenteditable] {
+  min-height: 30px;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.text-area [contenteditable]:hover {
+}
+
+#cssOutputContainer {
+  border: 1px solid #4169e1;
+  border-radius: 16px;
+  padding: 40px;
+  background-color: #000;
+  color: #fff;
+  margin-top: 24px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

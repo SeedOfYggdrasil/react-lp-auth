@@ -12,7 +12,7 @@ import EditorPage from './pages/EditorPage'
 const App = () => {
   const auth = getAuth()
   const [currentUser, setCurrentUser] = useState(null)
-  
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -21,10 +21,10 @@ const App = () => {
         setCurrentUser(null)
       }
     })
-  
+
     return () => unsubscribe()
   }, [auth])
- 
+
     return (
       <div className='App'>
         <Router>
@@ -40,11 +40,11 @@ const App = () => {
             />
             <Route
               path='/dashboard'
-              element={<Redirect to='/' />}
+              element={<Redirect to='/dashboard' />}
             />
             <Route
               path='*'
-              element={<Redirect to='/' />} 
+              element={<Redirect to='/' />}
             />
 
           </Routes>
