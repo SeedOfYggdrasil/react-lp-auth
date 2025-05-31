@@ -1,6 +1,6 @@
 {
   "name": "noted-backend",
-  "version": " 3.0",
+  "version": " 4.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,11 +9,6 @@
     "cors": "latest",
     "dotenv": "latest",
     "express": "^4.20.0",
-    "router": "latest",
-    "express-router": "latest",
-    "react-router": "latest",
-    "path": "latest",
-    "prompt-sync": "latest",
-    "mongodb": "latest"
+    "path": "latest"
   }
 }

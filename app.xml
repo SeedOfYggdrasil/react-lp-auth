@@ -1,0 +1,2816 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+client/
+  src/
+    assets/
+      fb.svg
+      google.svg
+    components/
+      AltEditor.jsx
+      Banner.jsx
+      BtnClose.jsx
+      BtnLogout.jsx
+      BtnMain.jsx
+      Copyright.jsx
+      Editor.jsx
+      Login.jsx
+      ModalWrapper.jsx
+      Navbar.jsx
+      Redirect.jsx
+      Register.jsx
+    css/
+      AltEditor.css
+      App.css
+      Banner.css
+      BtnClose.css
+      BtnLogout.css
+      BtnMain.css
+      Copyright.css
+      Dashboard.css
+      Editor.css
+      EditorPage.css
+      fonts.css
+      LandingPage.css
+      Login.css
+      Navbar.css
+      Register.css
+    pages/
+      Dashboard.jsx
+      EditorPage.jsx
+      LandingPage.jsx
+    App.jsx
+    firebaseConfig.js
+    main.jsx
+  .eslintrc.cjs
+  index.html
+  package.json
+  vite.config.js
+server/
+  package.json
+  server.js
+.gitignore
+package.json
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="client/src/assets/fb.svg">
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" id="_24x24_On_Light_Facebook" data-name="24x24/On Light/Facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="0.991" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4e69a2"/>
+      <stop offset="1" stop-color="#3b5998"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Shape" d="M11.193,19.929h0V13.159h2.358l.354-2.667H11.193v-1.7c0-.779.231-1.3,1.356-1.3H14V5.106A19.937,19.937,0,0,0,11.887,5,3.269,3.269,0,0,0,8.365,8.525v1.966H6v2.667H8.365v6.709a10,10,0,1,1,2.83.062Z" transform="translate(2 2)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <rect id="view-box" width="24" height="24" fill="none"/>
+  <path id="Shape-2" data-name="Shape" d="M11.193,19.929h0V13.159h2.358l.354-2.667H11.193v-1.7c0-.779.231-1.3,1.356-1.3H14V5.106A19.937,19.937,0,0,0,11.887,5,3.269,3.269,0,0,0,8.365,8.525v1.966H6v2.667H8.365v6.709a10,10,0,1,1,2.83.062Z" transform="translate(2 2)" fill="url(#linear-gradient)"/>
+</svg>
+</file>
+
+<file path="client/src/assets/google.svg">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="#131314"/>
+<g clip-path="url(#clip0_710_6219)">
+<path d="M29.6 20.2273C29.6 19.5182 29.5364 18.8364 29.4182 18.1818H20V22.05H25.3818C25.15 23.3 24.4455 24.3591 23.3864 25.0682V27.5773H26.6182C28.5091 25.8364 29.6 23.2727 29.6 20.2273Z" fill="#4285F4"/>
+<path d="M20 30C22.7 30 24.9636 29.1045 26.6181 27.5773L23.3863 25.0682C22.4909 25.6682 21.3454 26.0227 20 26.0227C17.3954 26.0227 15.1909 24.2636 14.4045 21.9H11.0636V24.4909C12.7091 27.7591 16.0909 30 20 30Z" fill="#34A853"/>
+<path d="M14.4045 21.9C14.2045 21.3 14.0909 20.6591 14.0909 20C14.0909 19.3409 14.2045 18.7 14.4045 18.1V15.5091H11.0636C10.3864 16.8591 10 18.3864 10 20C10 21.6136 10.3864 23.1409 11.0636 24.4909L14.4045 21.9Z" fill="#FBBC04"/>
+<path d="M20 13.9773C21.4681 13.9773 22.7863 14.4818 23.8227 15.4727L26.6909 12.6045C24.9591 10.9909 22.6954 10 20 10C16.0909 10 12.7091 12.2409 11.0636 15.5091L14.4045 18.1C15.1909 15.7364 17.3954 13.9773 20 13.9773Z" fill="#E94235"/>
+</g>
+<rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#8E918F"/>
+<defs>
+<clipPath id="clip0_710_6219">
+<rect width="20" height="20" fill="white" transform="translate(10 10)"/>
+</clipPath>
+</defs>
+</svg>
+</file>
+
+<file path="client/src/components/AltEditor.jsx">
+import { useState, useRef, forwardRef, useImperativeHandle } from "react";
+import "../css/AltEditor.css";
+
+const fonts = {
+  Poppins: "Poppins",
+  Roboto: "Roboto",
+  "Open Sans": "Open+Sans",
+  "Noto Sans Japanese": "Noto+Sans+Japanese",
+  Montserrat: "Montserrat",
+  Lato: "Lato",
+  Inter: "Inter",
+  "Roboto Condensed": "Roboto+Condensed",
+  "Roboto Mono": "Roboto+Mono",
+  Oswald: "Oswald",
+  Raleway: "Raleway",
+  "Nunito Sans": "Nunito+Sans",
+  Nunito: "Nunito",
+  Ubuntu: "Ubuntu",
+  Rubik: "Rubik",
+  "Playfair Display": "Playfair+Display",
+  Merriweather: "Merriweather",
+  "Noto Sans Korean": "Noto+Sans+Korean",
+  "Roboto Slab": "Roboto+Slab",
+  "PT Sans": "PT+Sans",
+  Kanit: "Kanit",
+  "Work Sans": "Work+Sans",
+  Mulish: "Mulish",
+  Lora: "Lora",
+  "DM Sans": "DM+Sans",
+  "Noto Sans Traditional Chinese": "Noto+Sans+Traditional+Chinese",
+  "Fira Sans": "Fira+Sans",
+  Quicksand: "Quicksand",
+  Barlow: "Barlow",
+  Inconsolata: "Inconsolata",
+  Manrope: "Manrope",
+  "Hind Siliguri": "Hind+Siliguri",
+  Heebo: "Heebo",
+  "Titillium Web": "Titillium+Web",
+  "IBM Plex Sans": "IBM+Plex+Sans",
+  "PT Serif": "PT+Serif",
+  "Noto Serif": "Noto+Serif",
+  Karla: "Karla",
+  "Bebas Neue": "Bebas+Neue",
+  "Nanum Gothic": "Nanum+Gothic",
+  "Schibsted Grotesk": "Schibsted+Grotesk",
+  "Libre Franklin": "Libre+Franklin",
+  Outfit: "Outfit",
+  "Noto Color Emoji": "Noto+Color+Emoji",
+  "Josefin Sans": "Josefin+Sans",
+  Jost: "Jost",
+  "Libre Baskerville": "Libre+Baskerville",
+  "Source Sans 3": "Source+Sans+3",
+  Mukta: "Mukta",
+};
+
+const fontWeights = [
+  { value: "100", label: "Thin" },
+  { value: "200", label: "Extra Light" },
+  { value: "300", label: "Light" },
+  { value: "400", label: "Regular" },
+  { value: "500", label: "Medium" },
+  { value: "600", label: "Semi Bold" },
+  { value: "700", label: "Bold" },
+  { value: "800", label: "Extra Bold" },
+  { value: "900", label: "Black" },
+];
+
+const fontSizes = [
+  "8px","10px","12px","14px","16px","18px","20px","24px","28px","32px",
+  "36px","40px","48px","56px","64px","72px","80px","96px"
+];
+
+const initialStyles = {
+  h1: {
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: "48px",
+    fontWeight: "600",
+    color: "#ffffff",
+    fontStyle: "normal",
+    textAlign: "left",
+  },
+  h2: {
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: "32px",
+    fontWeight: "600",
+    color: "#ffffff",
+    textAlign: "left",
+  },
+  p: {
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: "18px",
+    fontWeight: "400",
+    color: "#ffffff",
+    textAlign: "left",
+  },
+};
+
+// eslint-disable-next-line react/display-name
+const AltEditor = forwardRef((props, ref) => {
+  const [elementStyles, setElementStyles] = useState(initialStyles);
+  const [activeElement, setActiveElement] = useState("h1");
+
+  const loadedFontsRef = useRef(new Set());
+  // No longer need googleFontLinksRef for this functionality change
+
+  const h1Ref = useRef(null);
+  const h2Ref = useRef(null);
+  const pRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    getContent: () => {
+      return {
+        h1: { html: h1Ref.current?.innerHTML || '', style: elementStyles.h1 },
+        h2: { html: h2Ref.current?.innerHTML || '', style: elementStyles.h2 },
+        p: { html: pRef.current?.innerHTML || '', style: elementStyles.p },
+      };
+    },
+    resetEditor: () => {
+      if (h1Ref.current) h1Ref.current.innerHTML = "Heading 1";
+      if (h2Ref.current) h2Ref.current.innerHTML = "Heading 2";
+      if (pRef.current) pRef.current.innerHTML = "Paragraph text...<br/><br/>";
+      setElementStyles(initialStyles);
+      setActiveElement("h1");
+    },
+    getStylesForExport: () => {
+        // Collect all dynamically loaded font URLs
+        const fontLinks = Array.from(document.head.querySelectorAll('link.dynamic-font'))
+                                .map(link => link.outerHTML)
+                                .join('\n');
+        return fontLinks;
+    }
+  }));
+
+
+  const updateStyle = (property, value) => {
+    setElementStyles((prevStyles) => {
+      const newStyles = { ...prevStyles };
+      newStyles[activeElement] = { ...newStyles[activeElement], [property]: value };
+      return newStyles;
+    });
+  };
+
+  const handleFontChange = (e) => {
+    const font = e.target.value;
+    const fontQueryParam = fonts[font].replace(/\s/g, '+');
+    const fontUrl = `https://fonts.googleapis.com/css2?family=${fontQueryParam}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap`;
+    
+    if (!loadedFontsRef.current.has(font)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = fontUrl;
+      link.className = "dynamic-font"; // Class to identify these links
+      document.head.appendChild(link);
+      loadedFontsRef.current.add(font);
+    }
+    updateStyle("fontFamily", `"${font}", sans-serif`);
+  };
+
+  const handleFontWeightChange = (e) => {
+    updateStyle("fontWeight", e.target.value);
+  };
+
+  const handleFontSizeChange = (e) => {
+    updateStyle("fontSize", e.target.value);
+  };
+
+  const handleTextColorChange = (e) => {
+    updateStyle("color", e.target.value);
+  };
+
+  const toggleItalic = () => {
+    setElementStyles((prevStyles) => {
+      const current = prevStyles[activeElement].fontStyle;
+      const newStyle = current === "italic" ? "normal" : "italic";
+      return {
+        ...prevStyles,
+        [activeElement]: { ...prevStyles[activeElement], fontStyle: newStyle },
+      };
+    });
+  };
+
+  const handleAlignment = (alignment) => {
+    updateStyle("textAlign", alignment);
+  };
+
+  const isActive = (property, value) =>
+    elementStyles[activeElement]?.[property] === value ? "active" : "";
+
+  return (
+    <div id="main" className="edutir-wrappper">
+      <div className="form-group">
+        <div className="toolbar d-flex align-items-center">
+          <div className="font-switcher">
+            <select
+              id="fontSelector"
+              className="form-select"
+              value={
+                elementStyles[activeElement]?.fontFamily.replace(/"/g, "").split(",")[0] || Object.keys(fonts)[0]
+              }
+              onChange={handleFontChange}
+            >
+              {Object.keys(fonts).map((fontName) => (
+                <option key={fontName} value={fontName}>
+                  {fontName}
+                </option>
+              ))}
+            </select>
+          </div>
+          <select
+            id="fontWeight"
+            className="form-select"
+            value={elementStyles[activeElement]?.fontWeight || "400"}
+            onChange={handleFontWeightChange}
+          >
+            {fontWeights.map((fw) => (
+              <option key={fw.value} value={fw.value}>
+                {fw.label}
+              </option>
+            ))}
+          </select>
+          <select
+            id="fontSize"
+            className="form-select"
+            value={elementStyles[activeElement]?.fontSize || "16px"}
+            onChange={handleFontSizeChange}
+          >
+            {fontSizes.map((size) => (
+              <option key={size} value={size}>
+                {size}
+              </option>
+            ))}
+          </select>
+          <div>
+            <div id="textFormat">
+              <input
+                type="color"
+                id="textColor"
+                className="form-control"
+                title="Text Color"
+                value={elementStyles[activeElement]?.color || "#ffffff"}
+                onChange={handleTextColorChange}
+              />
+              <button
+                id="styleItalic"
+                className={`btn ${isActive("fontStyle", "italic")}`}
+                title="Italic"
+                onClick={toggleItalic}
+              >
+                <span className="material-symbols-rounded">format_italic</span>
+              </button>
+              <button
+                id="alignLeft"
+                className={`btn ${isActive("textAlign", "left")}`}
+                title="Align Left"
+                onClick={() => handleAlignment("left")}
+              >
+                <span className="material-symbols-rounded">format_align_left</span>
+              </button>
+              <button
+                id="alignCenter"
+                className={`btn ${isActive("textAlign", "center")}`}
+                title="Align Center"
+                onClick={() => handleAlignment("center")}
+              >
+                <span className="material-symbols-rounded">format_align_center</span>
+              </button>
+              <button
+                id="alignRight"
+                className={`btn ${isActive("textAlign", "right")}`}
+                title="Align Right"
+                onClick={() => handleAlignment("right")}
+              >
+                <span className="material-symbols-rounded">format_align_right</span>
+              </button>
+              <button
+                id="alignJustify"
+                className={`btn ${isActive("textAlign", "justify")}`}
+                title="Justify"
+                onClick={() => handleAlignment("justify")}
+              >
+                <span className="material-symbols-rounded">format_align_justify</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="text-area">
+        <h1
+          ref={h1Ref}
+          id="editableHeading"
+          contentEditable
+          suppressContentEditableWarning
+          onClick={() => setActiveElement("h1")}
+          style={elementStyles.h1}
+          dangerouslySetInnerHTML={{ __html: "Heading 1" }} 
+        >
+        </h1>
+        <h2
+          ref={h2Ref}
+          contentEditable
+          suppressContentEditableWarning
+          onClick={() => setActiveElement("h2")}
+          style={elementStyles.h2}
+          dangerouslySetInnerHTML={{ __html: "Heading 2" }}
+        >
+        </h2>
+        <p
+          ref={pRef}
+          contentEditable
+          suppressContentEditableWarning
+          onClick={() => setActiveElement("p")}
+          style={elementStyles.p}
+          dangerouslySetInnerHTML={{ __html: "Paragraph text...<br/><br/>" }}
+        >
+        </p>
+      </div>
+    </div>
+  );
+});
+
+export default AltEditor;
+</file>
+
+<file path="client/src/components/Banner.jsx">
+import { } from 'react';
+import logo from '../assets/logo.png';
+import '../css/Banner.css';
+
+const Banner = () => {
+
+return (
+ <div className="banner-container">
+  <div className="grad-bar"></div>
+  <nav className="banner">
+    <img src={logo} alt="Noted" />
+    <div className="menu-toggle" id="mobile-menu">
+      <span className="bar"></span>
+      <span className="bar"></span>
+      <span className="bar"></span>
+    </div>
+    <ul className="nav no-search">
+      <li className="nav-item"><a href="#">Dashboard</a></li>
+      <li className="nav-item"><a href="#">Docs</a></li>
+      <li className="nav-item"><a href="#">API</a></li>
+      <li className="nav-item"><a href="#">Settings</a></li>
+      <li className="nav-item"><a href="#">Sign Out</a></li>
+    </ul>
+  </nav>
+  </div>
+ );
+};
+
+export default Banner;
+</file>
+
+<file path="client/src/components/BtnClose.jsx">
+// BtnClose.jsx
+
+import '../css/BtnClose.css'
+import PropTypes from 'prop-types'
+
+function BtnClose ({ onClick }) {
+  return (
+    <button className='btn-x' onClick={onClick}>
+      X
+    </button>
+  )
+}
+
+BtnClose.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
+export default BtnClose
+</file>
+
+<file path="client/src/components/BtnLogout.jsx">
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+import '../css/BtnMain.css';
+
+const BtnLogout = () => {
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/');
+    } catch (error) {
+      console.error('Error signing out:', error);
+      // Optionally navigate to login even if sign-out fails
+      navigate('/');
+    }
+  };
+
+  return (
+    <button className="btn-hero" onClick={handleLogout}>
+      Sign Out
+    </button>
+  );
+};
+
+export default BtnLogout;
+</file>
+
+<file path="client/src/components/BtnMain.jsx">
+// BtnMain.jsx
+
+import { useState, useEffect } from 'react'
+import '../css/BtnMain.css'
+import PropTypes from 'prop-types'
+
+const BtnMain = ({ onClick }) => {
+  const [label, setLabel] = useState(
+    window.innerWidth < 600 ? 'Login' : 'Login to Dashboard'
+  )
+
+  useEffect(() => {
+    const handleResize = () => {
+      setLabel(window.innerWidth < 600 ? 'Login' : 'Login to Dashboard')
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // eslint-disable-next-line no-unused-vars
+  function debounce (fn, ms) {
+    let timer
+    return () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    }
+  }
+
+  return (
+    <button className='btn-hero' onClick={onClick}>
+      {label}
+    </button>
+  )
+}
+
+BtnMain.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
+
+export default BtnMain
+</file>
+
+<file path="client/src/components/Copyright.jsx">
+// Copyright.jsx
+
+const Copyright = () => {
+    return (
+        <div className="footer">
+            <div className="copyright">
+                <p>Copyright &copy; 2025 Alex Pariah </p>
+            </div>
+        </div>
+    );
+};
+
+export default Copyright;
+</file>
+
+<file path="client/src/components/Editor.jsx">
+// src/Editor.jsx
+import React, { useEffect, useRef } from 'react';
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
+import '../css/Editor.css';
+
+const Editor = () => {
+  const containerRef = useRef(null);
+  const toolbarRef = useRef(null);
+
+  useEffect(() => {
+    console.clear();
+    // Import and whitelist custom fonts
+    const FontAttributor = Quill.import('formats/font');
+    const fonts = ['impact', 'courier', 'comic'];
+    FontAttributor.whitelist = fonts;
+    Quill.register(FontAttributor, true);
+
+    // Initialize the Quill editor with the custom toolbar
+    new Quill(containerRef.current, {
+      modules: {
+        toolbar: toolbarRef.current
+      },
+      placeholder: 'Type something here',
+      theme: 'snow'
+    });
+  }, []);
+
+  return (
+    <div className="editor-container">
+      <div id="toolbar-container" ref={toolbarRef}>
+        <select className="ql-line-height" defaultValue="1em">
+          <option value="1em">1</option>
+          <option value="1.1em">1.1</option>
+          <option value="1.2em">1.2</option>
+          <option value="1.3em">1.3</option>
+          <option value="1.4em">1.4</option>
+          <option value="1.5em">1.5</option>
+          <option value="1.6em">1.6</option>
+        </select>
+        <select className="ql-font" defaultValue="impact">
+          <option value="impact">Impact</option>
+          <option value="courier">Courier</option>
+          <option value="comic">Comic Sans MS</option>
+        </select>
+        <select className="ql-header" defaultValue="">
+          <option value="1">Heading 1</option>
+          <option value="2">Heading 2</option>
+          <option value="3">Heading 3</option>
+          <option value="4">Heading 4</option>
+          <option value="">Normal</option>
+        </select>
+        <select className="ql-size" defaultValue="">
+          <option value="small">Small</option>
+          <option value="">Normal</option>
+          <option value="large">Large</option>
+          <option value="huge">Huge</option>
+        </select>
+        <button className="ql-bold"></button>
+        <button className="ql-italic"></button>
+        <button className="ql-underline"></button>
+        <button className="ql-strike"></button>
+        <button className="ql-script" value="sub"></button>
+        <button className="ql-script" value="super"></button>
+      </div>
+      <div id="container" ref={containerRef} style={{ height: '300px' }}></div>
+    </div>
+  );
+};
+
+export default Editor;
+</file>
+
+<file path="client/src/components/ModalWrapper.jsx">
+// ModalWrapper.jsx
+
+import PropTypes from 'prop-types'
+import BtnClose from './BtnClose'
+import '../css/Login.css'
+import '../css/BtnClose.css'
+import '../css/LandingPage.css'
+import '../css/fonts.css'
+
+const ModalWrapper = ({ children, isVisible, toggleModal }) => {
+  if (!isVisible) return null
+
+  return (
+    <div className='modal-backdrop'>
+      <div className='modal'>
+        {children}
+        <BtnClose onClick={toggleModal} />
+      </div>
+    </div>
+  )
+}
+
+ModalWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  isVisible: PropTypes.bool.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+}
+
+export default ModalWrapper
+</file>
+
+<file path="client/src/components/Redirect.jsx">
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
+const Redirect = ({ to }) => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate(to)
+  }, [to, navigate])
+
+  return null
+}
+
+Redirect.propTypes = {
+  to: PropTypes.string.isRequired
+}
+
+export default Redirect
+</file>
+
+<file path="client/src/components/Register.jsx">
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import '../css/Login.css'
+import '../css/Register.css'
+import '../css/LandingPage.css'
+import '../css/fonts.css'
+
+const Register = ({ closeModal, switchToLogin }) => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState()
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleRegister = async e => {
+    e.preventDefault()
+    setError('')
+    setLoading(true)
+
+    if (!email || !password) {
+      setError('Please fill out all fields.')
+      setLoading(false)
+      return
+    }
+
+    if (confirmPassword != password) {
+      setError('Passwords do not match.')
+      setLoading(false)
+      return
+    } 
+
+    try {
+      const auth = getAuth()
+      await createUserWithEmailAndPassword(auth, email, password)
+      navigate('/dashboard')
+      closeModal()
+    } catch (error) {
+      console.error('Error during registration:', error)
+      setError(error.message)
+      setLoading(false)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleRegister}>
+        {error && <div className='error-message'>{error}</div>}
+        <div className='text-email'>
+          <input
+            type='email'
+            placeholder='Email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+        </div>
+        <div className='text-password'>
+          <input
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+        </div>
+          <div className='text-confirm-password'>
+          <input
+            type='password'
+            placeholder='Confirm Password'
+            value={confirmPassword}
+            onChange={e => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <button type='submit' className='btn-submit' disabled={loading}>
+          {loading ? 'Loading...' : 'Submit'}
+        </button>
+      </form>
+      <div className='modal-footer'>
+        <p>
+         Already have an account?{' '} Return to 
+          <button className='btn-register' onClick={switchToLogin}>
+            Login
+          </button>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+Register.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  switchToLogin: PropTypes.func.isRequired
+}
+
+export default Register
+</file>
+
+<file path="client/src/css/AltEditor.css">
+.editor-wrapper {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 1rem 0;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #181818;
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(50,200,255,0.4);
+}
+
+.font-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.form-select, .toolbar .btn {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid rgba(50,200,255,0.6);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form-select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+
+.form-select:hover, .toolbar .btn:hover {
+  background-color: #333;
+  border-color: rgba(50,200,255,1);
+}
+
+.toolbar .btn.active {
+  background: rgba(50,200,255,0.5);
+  color: #fff;
+  border-color: rgba(50,200,255,1);
+}
+
+#textFormat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.form-control[type="color"] {
+  background-color: transparent;
+  border: 1px solid rgba(50,200,255,0.6);
+  border-radius: 6px;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form-control[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 3px;
+  border-radius: 4px;
+}
+.form-control[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+.form-control[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+
+.text-area {
+  border: 1px solid rgba(50,200,255,0.3);
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #0A0A0A;
+  color: #e0e0e0;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 0;
+  line-height: 1.7;
+  min-height: 200px;
+}
+
+.text-area [contenteditable] {
+  min-height: 50px;
+  outline: none;
+  font-size: 1rem;
+  cursor: text;
+  padding: 5px 2px;
+}
+.text-area [contenteditable]:focus {
+  box-shadow: 0 0 0 1px rgba(50,200,255,0.2);
+}
+
+
+.text-area h1, .text-area h2, .text-area p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+.text-area h1:last-child, .text-area h2:last-child, .text-area p:last-child {
+    margin-bottom: 0;
+}
+
+
+.toolbar .btn .material-symbols-rounded {
+  display: inline-flex;
+  vertical-align: middle;
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 768px) {
+  .toolbar {
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .form-select, .toolbar .btn {
+    padding: 7px 10px;
+    font-size: 0.85em;
+  }
+  .text-area [contenteditable] {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .toolbar {
+    gap: 5px;
+    padding: 8px;
+    justify-content: flex-start;
+  }
+  .toolbar > div {
+    margin-bottom: 5px;
+  }
+
+  .form-select, .toolbar .btn {
+    padding: 8px 10px;
+    font-size: 0.8em;
+    min-width: 40px;
+  }
+  .form-select {
+    min-width: 120px;
+  }
+
+  .toolbar .btn .material-symbols-rounded {
+    font-size: 1.2em;
+  }
+
+  .text-area {
+    padding: 10px;
+    line-height: 1.6;
+  }
+  .text-area [contenteditable] {
+    font-size: 0.9rem;
+  }
+}
+</file>
+
+<file path="client/src/css/App.css">
+/* App.css */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+</file>
+
+<file path="client/src/css/Banner.css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.banner-container {
+  width: 100%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.banner img, .banner h1 {
+  height: 16px;
+  width: auto;
+  justify-self: start;
+  margin-left: 20px;
+}
+
+.banner ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-self: end;
+  
+}
+
+.nav-item a {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+
+.nav-item a:hover {
+  color: #3498db;
+}
+</file>
+
+<file path="client/src/css/BtnClose.css">
+/* BtnClose.css */
+
+.btn-x {
+    font-family: Roboto, Helvetica, Arial sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    width: 20px;
+    top: 7%;
+    left: 91%;
+    background: none;
+    color: rgb(0, 255, 200);
+    font-size: 0.6em;
+    margin: -10px;
+    border-color: rgb(7, 218, 255);
+    border: 1px solid;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-x:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(145, 0, 60);
+}
+</file>
+
+<file path="client/src/css/BtnLogout.css">
+/* BtnMain.css */
+
+}
+
+.btn-logout {
+    font-family: Guild, Helvetica, Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 190, 215);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px rgba(0, 10, 56, 0.8), 0 0 10px rgba(156, 174, 255, 0.8), 0px 0 20px rgba(255, 255, 255, 0.7), 0px 2px 10px rgb(1, 74, 87), 0px -2px 2px rgb(111, 0, 255), 0 0 10px #000;
+    text-align: center;
+    justify-content: center;
+    font-size: 4em;
+    font-weight: 400;
+    min-width: 15%;
+    width: auto;
+    box-sizing: 0;
+    box-shadow: 0 2 5px #000;
+    transition: color 0.3s ease, border 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, box-sizing 0.3s ease;
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+    color: #ffffff73;
+    background-color: rgba(6, 8, 104, 0);
+    border: 0px, solid;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #b700ff, 0 0 10px #ffffff;
+    box-shadow: 0 0 20px #7700ffab, 0 0 10px #a605ac8e, c;
+    box-sizing: 2em;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .btn-logout {
+        width: auto;
+        min-width: 40%;
+        font-size: 2em;
+        display: inline;
+    }
+
+    .btn-container {
+        margin-top: 55vh;
+    }
+}
+</file>
+
+<file path="client/src/css/BtnMain.css">
+/* BtnMain.css */
+
+.btn-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    left: 0;
+    margin-top: 55vh;
+    background-color: rgba(51, 0, 56, 0.295);
+    border: 1px solid rgba(47, 0, 216, 0.438);
+    overflow: hidden;
+}
+
+.btn-hero {
+    font-family: Guild, Helvetica, Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 190, 215);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px rgba(0, 10, 56, 0.8), 0 0 10px rgba(156, 174, 255, 0.8), 0px 0 20px rgba(255, 255, 255, 0.7), 0px 2px 10px rgb(1, 74, 87), 0px -2px 2px rgb(111, 0, 255), 0 0 10px #000;
+    text-align: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-weight: 400;
+    min-width: 15%;
+    width: auto;
+    box-sizing: 0;
+    box-shadow: 0 2 5px #000;
+    transition: color 0.3s ease, border 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, box-sizing 0.3s ease;
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+    color: #ffffff73;
+    background-color: rgba(6, 8, 104, 0);
+    border: 0px, solid;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #b700ff, 0 0 10px #ffffff;
+    box-shadow: 0 0 20px #7700ffab, 0 0 10px #a605ac8e, c;
+    box-sizing: 2em;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .btn-hero {
+        width: auto;
+        min-width: 40%;
+        font-size: 2em;
+        display: inline;
+    }
+
+    .btn-container {
+        margin-top: 55vh;
+    }
+}
+</file>
+
+<file path="client/src/css/Copyright.css">
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 6px 0;
+    z-index: 950;
+    box-shadow: 0 -1px 4px rgba(50, 150, 200, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    width: auto;
+    max-width: 95%;
+    padding: 0 10px;
+    margin: 0;
+    opacity: 0.85;
+    text-align: center;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 300;
+    color: #b0b0b0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 5px 0;
+    }
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
+</file>
+
+<file path="client/src/css/Dashboard.css">
+/* Dashboard.css */
+
+@import url('./fonts.css');
+
+body {
+  max-height: 100%;
+  max-width: 100%;
+  background: #000;
+  color: #fff;
+}
+
+.dash-container {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.dash-hero {
+ 
+ display: flex;
+  flex-direction: column;
+  height: 100vh;
+    flex: 1;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dash-hero h1 {
+  margin: 5px;
+  padding: 5px;
+  font-face: Guild, Helvetica, sans-serif;
+  font-size: 6em;
+  color: #fff;
+}
+
+.dash-hero h2 {
+  margin: 10px;
+  padding: 10px;
+  font-size: 4em;
+  color: #fff;
+}
+
+
+@media screen and (max-width: 700px) {
+  .dash-container {
+     padding: 20px;
+    width: 90%;  
+}
+
+  .dash-hero h1 {
+     min-width:  600px;
+     min-height: 200px;
+    font-size: 4em;
+    }
+.dash-hero h2 {
+    font-size: 2em;
+}
+
+}
+</file>
+
+<file path="client/src/css/fonts.css">
+/* fonts.css */
+
+/* Cervanttis */
+@font-face {
+  font-family: 'Cervanttis';
+  src: local('Cervanttis'), url('../assets/fonts/Cervanttis.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Guild of Professional Actors */
+@font-face {
+  font-family: 'Guild';
+  src: local('guildof'), url('../assets/fonts/guildof.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normsl;
+}
+
+/* Roboto */
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('../assets/fonts/Roboto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normsl;
+}
+</file>
+
+<file path="client/src/css/Login.css">
+/* Login.css */
+
+@media screen and (max-width: 600) {
+    .modal {
+        max-height:33%;
+        max-width: 90%;
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+.modal {
+    position: static;
+    background-color: rgba(0, 19, 27, 0.24);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid;
+    border-color: rgb(0, 225, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 96, 160, 0.829);
+    animation: slideUp 0.5s ease-out;
+    color: white;
+    max-width: 600px;
+    min-width:400px;
+    max-height: 350px;
+    min-height: 350px;
+}
+
+.h2 {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 5em;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+}
+
+.modal input {
+    font-family: Roboto, Helvetica, sans-serif;
+    color: white;
+    background: none;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid;
+    border-color: rgb(6, 221, 228);
+    font-size: 1.5em;
+    justify-content: center;
+    text-align: left;
+    margin: 5px;
+    padding: 2px;
+    width: 95%;
+}
+
+.modal input:focus {
+    background: white;
+    color: black;
+    border: none;
+}
+
+.btn-submit {
+    color: rgb(0, 255, 255);
+    background: none;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: rgb(0, 247, 255);
+    margin: 10px;
+    margin-top: 5%;
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: Roboto, Helvetica, sans-serif;
+    transition: color 0.3s ease, background 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgb(124, 0, 52);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.829);
+}
+
+.login-socials {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.google,
+.fb {
+    padding: 0px;
+    margin: 0px;
+    width: 30%;
+    background: none;
+    border: none;
+    border-color: white;
+}
+
+.error-message {
+    color: red;
+    font-size: 1em;
+    
+}
+
+.success-message {
+    color: rgb(9, 255, 0);
+    font-size: 1em;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+</file>
+
+<file path="client/src/css/Register.css">
+/* Register.css */
+
+.modal-footer {
+    font-size: 0.9em;
+    color: rgba(84, 255, 235, 0.781);
+}
+
+.modal-footer button {
+    font-style: none;
+    color: rgb(0, 162, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: none;
+    font-style: none;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.modal-footer button:hover,
+.modal-footer button:focus {
+    color: rgb(255, 0, 128);
+}
+
+
+
+/* .btn-register {
+    background: none;
+    font-style: none;
+    color: rgb(0, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+} */
+</file>
+
+<file path="client/src/pages/Dashboard.jsx">
+// Dashboard.jsx
+
+import BtnLogout from '../components/BtnLogout';
+import '../css/Dashboard.css';
+import '../css/BtnLogout.css';
+import '../css/BtnMain.css';
+import '../css/LandingPage.css';
+import '../css/fonts.css';
+
+const Dashboard = () => {
+  return (
+    <>
+     <div className='dash-hero'>
+            <h1>DASHBOARD</h1>
+            <h2>Coming Soon</h2>
+            <BtnLogout />  
+      </div>    
+    </> 
+    )
+};
+export default Dashboard;
+</file>
+
+<file path="client/src/pages/LandingPage.jsx">
+// pages/LandingPage.jsx
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+import ModalWrapper from "../components/ModalWrapper";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import BtnMain from "../components/BtnMain";
+import Copyright from "../components/Copyright";
+import "../css/LandingPage.css";
+import "../css/fonts.css";
+import "../css/Login.css";
+import "../css/Register.css";
+
+const LandingPage = () => {
+  const navigate = useNavigate();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState("login");
+  const openModal = () => setIsModalVisible(true);
+  const closeModal = () => setIsModalVisible(false);
+  const switchToRegister = () => setModalContent("register");
+  const switchToLogin = () => setModalContent("login");
+
+  // Rendering
+  return (
+    <div className="container">
+   
+    {/* Hero Section */}
+    <header className="header">
+        <div className="hero">
+            <img src={logo} className="logo" alt="noted" />
+            <div className="btn-container">
+                <BtnMain text="" onClick={openModal} />
+            </div>
+        </div>
+    </header>
+
+    {/* Modal */}
+    <ModalWrapper
+        className="model-backdrop"
+        isVisible={isModalVisible}
+        toggleModal={closeModal}
+     >
+        {modalContent === "login" ? (
+             <Login
+                navigate={navigate}
+                switchToRegister={switchToRegister}
+                closeModal={closeModal}
+              />
+         ) : (
+             <Register
+                navigate={navigate}
+                switchToLogin={switchToLogin}
+                closeModal={closeModal}
+              />
+         )}
+    </ModalWrapper>
+
+    {/* Footer Section */}
+    <Copyright />
+  </div>
+  );
+};
+
+export default LandingPage;
+</file>
+
+<file path="client/src/firebaseConfig.js">
+// Firebase Configuration
+
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+export default auth;
+</file>
+
+<file path="client/src/main.jsx">
+// main.jsx
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './css/App.css';
+import './css/LandingPage.css'
+import './css/BtnMain.css'
+import './css/Copyright.css'
+import './css/fonts.css'
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  render() {
+    if (this.state.hasError) {
+      return <div>Error: {this.state.error.message}</div>;
+    }
+    return this.props.children;
+  }
+}
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
+root.render(
+  <ErrorBoundary>
+     <React.StrictMode>
+        <App />
+    </React.StrictMode>
+  </ErrorBoundary>
+);
+</file>
+
+<file path="client/.eslintrc.cjs">
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+}
+</file>
+
+<file path="client/vite.config.js">
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [
+    react()
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    host: true,
+    port: 3000,
+    strictPort: false,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+    allowedHosts: ['all'],
+  },
+  build: {
+    sourcemap: true,
+    outDir: 'dist',
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        },
+      },
+    },
+  },
+  define: {
+    'process.env': process.env,
+  },
+});
+</file>
+
+<file path="server/package.json">
+{
+  "name": "noted-backend",
+  "version": " 4.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "^4.20.0",
+    "path": "latest"
+  }
+}
+</file>
+
+<file path="server/server.js">
+// server.js
+
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+
+// Express
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// Serve Client
+app.use(express.static(path.join(__dirname, "..", "client", "dist")));
+const indexPath = path.join(__dirname, "../client/dist/index.html");
+app.get("*", (req, res) => {
+  res.sendFile(indexPath);
+});
+
+// Start Server
+const HOST = process.env.HOST || "localhost";
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`http://${HOST}:${PORT}`);
+});
+</file>
+
+<file path="package.json">
+{
+    "name": "noted",
+    "version": "3",
+    "scripts": {
+        "start": "cd client && npx vite build && npx vite dev && cd ../server && npm run start",
+        "deploy": "cd client && npx vite build && cd ../server && npm run start",
+        "init": "cd client && npm i && cd .. && cd server && npm i"
+    }
+}
+</file>
+
+<file path="README.md">
+#### PROJECT SUMMARY
+
+# NOTED
+
+**NOTED** is an AI-powered note-taking and organizational tool designed to enhance your workflow, period.  Creative, technical, professional – your use-case is covered. Harness the power of cutting-edge artificial intelligence technology and watch your productivity skyrocket!
+
+## GOALS
+- Build and deploy a **working prototype** of a **full-stack, AI-powered** note-taking web-application to showcase the app’s **brand aesthetic** and **core functionality**.
+- **Integrate** with open-source large language model AI using **free or low-cost** APIs.
+- Lay a solid foundation  a **full-featured, robust, scalable** web-application in accordance with **modern best-practices** and **industry standards**.
+
+## TECH-STACK
+- **Frontend (UI/UX)**: React + Vite, CSS
+- **Backend (Server)**: Node.js + Express, NGINX (Production)
+
+## CORE FEATURES
+- **Record your ideas** by writing them down, recording your voice, or using speech-to-text.
+- Distraction-free, aesthetically pleasing, minimalist, and modern UI.
+- Format and style notes using Markdown or by using the intuitive, built-in rich-text editor.
+- Use AI to get organized by automatically generating layouts, templates, schedules, calendars, spread-sheets, budgets, or outlines.
+- Enhance your creativity with an AI that generates **plot/grammar/diction/formatting suggestions** in the margin and learns as you write, **evolving and adapting** to your specific workflow.
+- **Create, share, and download** templates from an online database.
+- **Synchronize** your notes on all devices using secure, encrypted cloud-storage.
+- After finishing your book, story, poem, or document, immediately **list it for sale as an e-book**, hardcover/paperback, or as an audiobook read aloud by an artificially generated voice.
+- **Attach images or videos** to notes, or embed websites using iframes.
+- Set notes as private, or allow others to access them and make their own changes for a collaborative effort.
+- Add **user-created plugins and modifications** for near-infinite expansion and functionality.
+
+## LICENSE
+**The MIT License (MIT)**
+Copyright © 2025 Alex Pariah
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+</file>
+
+<file path="client/src/components/Login.jsx">
+// Login.jsx
+
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import '../css/Login.css'
+import '../css/LandingPage.css'
+import '../css/fonts.css'
+import '../css/Register.css'
+
+const Login = ({ closeModal, switchToRegister }) => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleLogin = async e => {
+    e.preventDefault()
+    setError('')
+    setSuccess('')
+    setLoading(true)
+
+    if (!email || !password) {
+      setError('Please enter both email and password.')
+      setLoading(false)
+      return
+    }
+
+    try {
+      const auth = getAuth()
+      await signInWithEmailAndPassword(auth, email, password)
+       setSuccess('Logged in successfully. Redirecting...')
+       navigate('/editor')
+       closeModal()     
+    } catch (error) {
+       console.error('Error during login:', error)
+       setError('Incorrect email or password.')
+       setLoading(false)
+    } finally {
+        setLoading(false)     
+    }
+  }
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        {error && <div className='error-message'>{error}</div>}
+        {success && <div className='success-message'>{success}</div>}
+        <div className='text-email'>
+          <input
+            type='email'
+            placeholder='Email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+        </div>
+        <div className='text-password'>
+          <input
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+        </div>
+        <button type='submit' className='btn-submit' disabled={loading}>
+          {loading ? 'Loading...' : 'Submit'}
+        </button>
+      </form>
+      <div className='modal-footer'>
+        <p>
+          Don&apos;t have an account?{' '}
+          <button className='btn-register' onClick={switchToRegister}>
+            Register
+          </button>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+Login.propTypes = {
+  
+  closeModal: PropTypes.func.isRequired,
+  switchToRegister: PropTypes.func.isRequired
+}
+
+export default Login
+</file>
+
+<file path="client/src/components/Navbar.jsx">
+import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import '../css/Navbar.css';
+import logo from '../assets/logo.png';
+
+const Navbar = ({ onNew, onExport, onSave, onLogout }) => {
+  const [menuActive, setMenuActive] = useState(false);
+  const navbarRef = useRef(null);
+
+  const toggleMenu = () => {
+    setMenuActive(prev => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target) && menuActive) {
+        setMenuActive(false);
+      }
+    };
+
+    window.addEventListener('mouseup', handleClickOutside);
+    return () => {
+      window.removeEventListener('mouseup', handleClickOutside);
+    };
+  }, [menuActive]);
+
+  const handleAction = (action) => {
+    if (action) action();
+    setMenuActive(false); // Close menu after action
+  };
+
+  return (
+    <nav className="navbar" ref={navbarRef}>
+      <div className="container">
+        <div className="navbar-header">
+          <button className="navbar-toggler" onClick={toggleMenu} aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleAction(onNew); }} aria-label="Noted Home - New Document">
+            <img src={logo} alt="Noted Logo" />
+          </a>
+        </div>
+
+        <div className={`navbar-menu ${menuActive ? 'active' : ''}`}>
+          <ul className="navbar-nav">
+            <li><button onClick={() => handleAction(onNew)}>New</button></li>
+            <li><button onClick={() => handleAction(onExport)}>Export</button></li>
+            <li><button onClick={() => handleAction(onSave)}>Save</button></li>
+            <li><button onClick={() => handleAction(onLogout)}>Logout</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+Navbar.propTypes = {
+  onNew: PropTypes.func.isRequired,
+  onExport: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+};
+
+export default Navbar;
+</file>
+
+<file path="client/src/css/Editor.css">
+/* Set default font-family */
+#container {
+  font-family: "Roboto";
+  font-size: 18px;
+  height: 100%;
+  color: #fff;
+  background: #000;
+}
+
+#container #toolbar-container .ql-toolbar {
+  padding: 10px;
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.ql-toolbar .ql-picker, .ql-font{
+  width: 130px;
+  color: #fff;
+}
+
+/* Set dropdown font-families */
+.ql-font span[data-value="Roboto"]::before, .ql-font span[data-label="Roboto"]::before {
+  font-family: "Roboto";
+}
+.ql-font span[data-value="impact"]::before, .ql-font span[data-label="Impact"]::before {
+  font-family: "Impact";
+}
+.ql-font span[data-value="courier"]::before, .ql-font span[data-label="Courier"]::before {
+  font-family: "Courier";
+}
+.ql-font span[data-value="comic"]::before, .ql-font span[data-label="Comic Sans MS"]::before {
+  font-family: "Comic Sans MS";
+}
+
+.ql-font-roboto { font-family: 'Roboto'; };
+.ql-font-impact { font-family: 'Impact'; }
+.ql-font-courier { font-family: 'Courier'; }
+.ql-font-comic { font-family: 'Comic Sans MS'; }
+</file>
+
+<file path="client/src/css/LandingPage.css">
+/* LandingPage.css  */
+
+@import url('./fonts.css');
+
+body {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.banner {
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
+.bgVid {
+	background: black;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -10;
+	overflow: hidden;
+}
+
+.darker {
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -9;
+	overflow: hidden;
+}
+
+.header {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.hero {
+	position: fixed;
+	top: 25vh;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	max-height: 20%;
+}
+
+.hero img {
+	position: relative;
+	display: flex;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	width: auto;
+	max-width: 800px;
+	min-width: 600px;
+	top: 0;
+	height: auto;
+	max-height: 600px;
+	min-height: 400px;
+}
+
+.btn-back-box {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 20px;
+	padding: 20px;
+	justify-content: center;
+	text-align: center;
+	z-index: 2;
+}
+
+.btn-back {
+	position: absolute;
+	margin-top: 100%;
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-size: 0.8em;
+	color: rgba(0, 119, 255, 0.363);
+	border: none;
+	background: none;
+	bottom: 0;
+	transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+	color: rgb(222, 255, 255);
+}
+
+@media screen and (max-width: 700px) {
+	.darker {
+		display: none;
+	}
+	.hero img {
+		max-width: 600px;
+		min-height: 200px;
+		padding: 20px;
+		margin: 20px;
+	}
+}
+</file>
+
+<file path="client/src/css/Navbar.css">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.925rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar .container {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar,
+.navbar > .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .navbar,
+  .navbar > .container {
+    display: block;
+  }
+   .navbar > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 0;
+  border: none;
+  min-height: 50px;
+}
+
+.navbar .navbar-header {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+  }
+}
+.navbar .navbar-header .navbar-toggler {
+  cursor: pointer;
+  border: none;
+  display: none;
+  outline: none;
+  background: transparent;
+  padding: 0.5rem;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-header .navbar-toggler {
+    display: block;
+  }
+}
+.navbar .navbar-header .navbar-toggler span {
+  height: 2px;
+  width: 22px;
+  background-color: #fff;
+  display: block;
+  border-radius: 1px;
+}
+.navbar .navbar-header .navbar-toggler span:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+.navbar .navbar-header > a {
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-menu {
+  display: flex;
+  align-items: center;
+  flex-basis: auto;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-menu {
+    display: none;
+    text-align: left;
+    width: 100%;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+}
+.navbar .navbar-menu.active {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+}
+.navbar .navbar-menu .navbar-nav {
+  flex-direction: row;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-menu .navbar-nav {
+    width: 100%;
+    display: block;
+    margin-top: 0;
+  }
+}
+.navbar .navbar-menu .navbar-nav > li > a {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.navbar .navbar-menu .navbar-nav > li > a:hover,
+.navbar .navbar-menu .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #222;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-menu .navbar-nav > li > a {
+    border-bottom: 1px solid #2a2a2a;
+    display: block;
+    padding: 0.9rem 1rem;
+  }
+  .navbar .navbar-menu .navbar-nav > li:last-child > a {
+    border-bottom: none;
+  }
+   .navbar .navbar-menu .navbar-nav > li > a:hover,
+   .navbar .navbar-menu .navbar-nav > li > a:focus {
+      background-color: rgba(50,200,255,0.1);
+   }
+}
+.navbar .navbar-menu .navbar-nav > li.active a {
+  color: rgba(50,200,255, 1);
+  font-weight: 500;
+}
+
+.navbar .navbar-menu .navbar-nav .navbar-dropdown {
+  position: relative;
+}
+.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-width: 200px;
+  width: auto;
+  white-space: nowrap;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  z-index: 10000;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: none;
+  border: 1px solid #2a2a2a;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding-left: 1rem;
+    border-radius: 0;
+  }
+}
+.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a {
+  color: #bbb;
+  padding: 0.5rem 1.2rem;
+  display: block;
+}
+.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a:hover,
+.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a:focus {
+  background-color: #222;
+  color: #fff;
+}
+.navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown.show {
+  display: block !important;
+}
+.navbar .navbar-menu .navbar-nav .dropdown > .separator {
+  height: 1px;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #333;
+}
+
+.navbar .navbar-header > a span {
+  color: #66f;
+}
+.navbar .navbar-header img {
+  width: 220px;
+  height: auto;
+  display: block;
+  padding: 5px 0;
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-header img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar-header img {
+    width: 180px;
+    padding: 5px 0;
+  }
+}
+@media (max-width: 480px) {
+  .navbar .navbar-header img {
+    width: 150px;
+    padding: 5px 0;
+  }
+   .navbar .navbar-header .navbar-toggler {
+    padding: 0.4rem;
+  }
+};
+  
+
+.navbar .navbar-menu .navbar-nav > li > button {
+  background: none;
+  border: none;
+  color: #ccc; /* Match link color */
+  font-family: inherit; /* Match link font */
+  font-size: inherit; /* Match link font size */
+  padding: 0.75rem 1rem; /* Match link padding */
+  cursor: pointer;
+  text-align: left; /* For mobile view if items stack */
+  width: 100%; /* For mobile view */
+  display: inline-block; /* For desktop view */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar .navbar-menu .navbar-nav > li > button:hover,
+.navbar .navbar-menu .navbar-nav > li > button:focus {
+  color: #fff;
+  background-color: #222; /* Match link hover */
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar-menu .navbar-nav > li > button {
+    padding: 0.9rem 1rem; /* Match mobile link padding */
+    display: block; /* Ensure it takes full width on mobile */
+  }
+  .navbar .navbar-menu .navbar-nav > li > button:hover,
+  .navbar .navbar-menu .navbar-nav > li > button:focus {
+    background-color: rgba(50,200,255,0.1); /* Match mobile link hover */
+  }
+}
+</file>
+
+<file path="client/index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>noted</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100,0,0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="client/package.json">
+{
+  "name": "noted-client",
+  "version": " 3.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build"
+  },
+  "dependencies": {
+    "firebase": "latest",
+    "prop-types": "latest",
+    "quill": "^2.0.3",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "@vitejs/plugin-react-swc": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "vite": "^6.2.3"
+  }
+}
+</file>
+
+<file path=".gitignore">
+node_modules
+package-lock.json
+.env
+logs
+*.log
+.backups
+.vscode
+.devcontainer
+.codesandbox
+dist
+.templates
+.unused
+.github
+*.mp4
+docker-compose.yaml
+</file>
+
+<file path="client/src/css/EditorPage.css">
+@import url('../css/fonts.css');
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Poppins', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.editor-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+.editor-page > .banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.editor-page > .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  padding: 20px 5%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.editor-page > .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #080808;
+  padding: 0;
+  z-index: 900;
+}
+
+@media screen and (max-width: 768px) {
+  .editor-page > .content {
+    padding: 0 3% 15px 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .editor-page > .content {
+    padding: 0 10px 15px 10px;
+  }
+}
+</file>
+
+<file path="client/src/pages/EditorPage.jsx">
+// EditorPage.jsx -- noted
+
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+import Navbar from '../components/Navbar';
+import Copyright from '../components/Copyright';
+import AltEditor from '../components/AltEditor'; // Changed from Editor to AltEditor
+import '../css/EditorPage.css';
+
+const EditorPage = () => {
+    const navigate = useNavigate();
+    const auth = getAuth();
+    const editorRef = useRef(null);
+
+    const handleNew = () => {
+        if (editorRef.current) {
+            editorRef.current.resetEditor();
+        }
+    };
+
+    const handleExport = () => {
+        if (editorRef.current) {
+            const content = editorRef.current.getContent();
+            const loadedFontLinks = editorRef.current.getStylesForExport();
+
+            const convertStyleObjectToString = (styleObj) => {
+                return Object.entries(styleObj)
+                    .map(([key, value]) => {
+                        const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
+                        return `${kebabKey}: ${value};`;
+                    })
+                    .join(" ");
+            };
+            
+    const htmlContent = `
+     <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exported Document</title>
+        ${loadedFontLinks}
+        <style>
+          body { margin: 20px; background-color: #333; color: #fff; }
+          h1, h2, p { margin-bottom: 1em; }
+        </style>
+      </head>
+      <body>
+        <h1 style="${convertStyleObjectToString(content.h1.style)}">${content.h1.html}</h1>
+        <h2 style="${convertStyleObjectToString(content.h2.style)}">${content.h2.html}</h2>
+        <p style="${convertStyleObjectToString(content.p.style)}">${content.p.html}</p>
+      </body>
+      </html>
+    `;
+
+     const blob = new Blob([htmlContent], { type: 'text/html' });
+     const link = document.createElement('a');
+     link.href = URL.createObjectURL(blob);
+     link.download = 'document.html';
+     document.body.appendChild(link);
+     link.click();
+     document.body.removeChild(link);
+     URL.revokeObjectURL(link.href);
+    }
+   };
+
+    const handleSave = () => {
+        if (editorRef.current) {
+            const content = editorRef.current.getContent();
+            console.log("Content to save:", content);
+            alert("Save functionality not fully implemented.");
+        }
+    };
+
+    const handleLogout = async () =>
+        try {
+            await signOut(auth);
+            navigate('/');
+        } catch (error) {
+            console.error('Error signing out:', error);
+            navigate('/'); 
+        }
+    };
+
+    return (
+        <div className='editor-page'>
+          <div className='banner'>
+                <Navbar 
+                    onNew={handleNew}
+                    onExport={handleExport}
+                    onSave={handleSave}
+                    onLogout={handleLogout}
+                />
+          </div>
+            <section className='content'>
+                <AltEditor ref={editorRef} />
+            </section>
+            <footer className='footer'>
+                <Copyright />
+            </footer>
+        </div>
+    );
+};
+
+export default EditorPage;
+</file>
+
+<file path="client/src/App.jsx">
+// App.jsx
+
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './firebaseConfig'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import LandingPage from './pages/LandingPage'
+import Redirect from './components/Redirect'
+import Dashboard from './pages/Dashboard'
+import EditorPage from './pages/EditorPage'
+
+const App = () => {
+  const auth = getAuth()
+  const [currentUser, setCurrentUser] = useState(null)
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setCurrentUser(user);
+      } else {
+        setCurrentUser(null)
+      }
+    })
+
+    return () => unsubscribe()
+  }, [auth])
+
+    return (
+      <div className='App'>
+        <Router>
+          <Routes>
+
+            <Route
+              path='/'
+              element={<LandingPage parentCallback={onAuthStateChanged} />}
+            />
+            <Route
+              path='/editor'
+              element={currentUser ? <EditorPage /> : <Redirect to='/' />}
+            />
+            <Route
+              path='/dashboard'
+              element={<Redirect to='/dashboard' />}
+            />
+            <Route
+              path='*'
+              element={<Redirect to='/' />}
+            />
+
+          </Routes>
+        </Router>
+      </div>
+    )
+  }
+
+export default App;
+</file>
+
+</files>

@@ -1,9 +1,8 @@
-/* EditorPage.css  */
-
 @import url('../css/fonts.css');
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,46 +13,68 @@ body {
   width: 100%;
   background: #000;
   color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Poppins', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .editor-page {
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  min-height: 100vh;
   background: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow-x: hidden;
+  flex-grow: 1;
 }
 
-.banner {
-  position: fixed;
+.editor-page > .banner {
+  position: sticky;
   top: 0;
   width: 100%;
-  height: 50px;
-  padding: 0;
-  margin: 0;
+  height: auto;
+  z-index: 1000;
+  background-color: #000;
 }
 
-.content {
+.editor-page > .content {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px 75px;
+  flex: 1;
+  padding: 20px 5%;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-.content h1 {
-  font-size: 2.5rem;
-  margin: 10px 0;
-  padding: 0 5px;
+.editor-page > .footer {
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  background-color: #080808;
+  padding: 0;
+  z-index: 900;
 }
 
-@media screen and (max-width: 700px) {
-  .editor-page {
-        padding: 10px;
+@media screen and (max-width: 768px) {
+  .editor-page > .content {
+    padding: 0 3% 15px 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .editor-page > .content {
+    padding: 0 10px 15px 10px;
   }
 }
