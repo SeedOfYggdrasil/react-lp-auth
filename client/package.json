@@ -7,11 +7,22 @@
     "build": "npx vite build"
   },
   "dependencies": {
+    "@tiptap/extension-color": "^2.12.0",
+    "@tiptap/extension-font-family": "^2.12.0",
+    "@tiptap/extension-highlight": "^2.12.0",
+    "@tiptap/extension-link": "^2.12.0",
+    "@tiptap/extension-placeholder": "^2.12.0",
+    "@tiptap/extension-text-align": "^2.12.0",
+    "@tiptap/extension-text-style": "^2.12.0",
+    "@tiptap/pm": "^2.12.0",
+    "@tiptap/react": "^2.12.0",
+    "@tiptap/starter-kit": "^2.12.0",
     "firebase": "latest",
     "prop-types": "latest",
     "quill": "^2.0.3",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "^5.5.0",
     "react-router": "latest",
     "react-router-dom": "latest"
   },

@@ -1,12 +1,15 @@
-import { useRef, useState, useEffect } from 'react';
+// EditorPage.jsx
+
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
-import { db } from '../firebaseConfig'; // Import db
-import { collection, addDoc, getDocs, query, where, serverTimestamp, doc, setDoc, deleteDoc } from 'firebase/firestore';
+import { db } from '../firebaseConfig';
+import { collection, addDoc, getDocs, query, where, serverTimestamp, doc, setDoc, deleteDoc, updateDoc } from 'firebase/firestore';
 import Navbar from '../components/Navbar';
 import Copyright from '../components/Copyright';
-import Editor from '../components/Editor'; // Renamed import
+import Editor from '../components/Editor';
 import LoadModal from '../components/LoadModal';
+import AlertModal from '../components/AlertModal';
 import '../css/EditorPage.css';
 
 const EditorPage = () => {
@@ -16,18 +19,23 @@ const EditorPage = () => {
     const [user, setUser] = useState(null);
 
     const [currentDocumentId, setCurrentDocumentId] = useState(null);
-    const [currentDocumentTitle, setCurrentDocumentTitle] = useState("Untitled Document");
+    const [documentTitleInput, setDocumentTitleInput] = useState("Untitled Document");
+
     const [isLoadModalVisible, setIsLoadModalVisible] = useState(false);
     const [documentsList, setDocumentsList] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-
+    
+    const [alertState, setAlertState] = useState({ isVisible: false, title: '', message: '', type: 'info' });
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSaving, setIsSaving] = useState(false); // For save button state
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
                 setUser(currentUser);
+                setIsLoading(false);
             } else {
                 setUser(null);
+                setIsLoading(false);
                 navigate('/');
             }
         });
@@ -35,41 +43,77 @@ const EditorPage = () => {
     }, [auth, navigate]);
     
     useEffect(() => {
-        if (editorRef.current) {
-            editorRef.current.resetEditor(); // Initialize with default content
-        }
-    }, []);
-
-
-    const handleNew = () => {
-        if (editorRef.current) {
+        if (editorRef.current && !isLoading && user) {
             editorRef.current.resetEditor();
         }
+        setDocumentTitleInput("Untitled Document");
+    }, [isLoading, user]);
+
+
+    const showAlert = (title, message, type = 'info', duration = 3000, onConfirmCallback = null, confirmBtnText = null) => {
+        setAlertState({ isVisible: true, title, message, type, onConfirm: onConfirmCallback, confirmText: confirmBtnText });
+        if (type !== 'loading' && type !== 'warning' && duration) { // Don't auto-close loading or warning with confirm
+            setTimeout(() => setAlertState(prev => ({ ...prev, isVisible: false })), duration);
+        }
+    };
+    const closeAlert = () => setAlertState(prev => ({ ...prev, isVisible: false }));
+
+    const handleNew = () => {
+        if (editorRef.current) editorRef.current.resetEditor();
         setCurrentDocumentId(null);
-        setCurrentDocumentTitle("Untitled Document");
+        setDocumentTitleInput("Untitled Document");
     };
 
-    const handleSave = async () => {
-        if (!user || !editorRef.current) return;
-        setIsLoading(true);
-        const content = editorRef.current.getContent();
-        
-        let titleToSave = currentDocumentTitle;
-        if (!currentDocumentId && (titleToSave === "Untitled Document" || !titleToSave)) {
-             titleToSave = content.h1.html.replace(/<[^>]+>/g, '').trim() || `Doc ${new Date().toLocaleTimeString()}`;
-             if (titleToSave.length > 50) titleToSave = titleToSave.substring(0, 50) + "...";
+    const handleTitleInputChange = (e) => {
+        setDocumentTitleInput(e.target.value);
+    };
+
+    const updateTitleInFirestore = useCallback(async (newTitle) => {
+        if (currentDocumentId && user && newTitle) {
+            try {
+                const docRef = doc(db, "documents", currentDocumentId);
+                await updateDoc(docRef, {
+                    title: newTitle,
+                    updatedAt: serverTimestamp()
+                });
+            } catch (error) {
+                console.error("Error updating title in Firestore: ", error);
+                showAlert("Error", "Failed to update document title in database.", "error");
+            }
         }
+    }, [currentDocumentId, user]);
+
+    const handleTitleInputBlur = () => {
+        const newTitle = documentTitleInput.trim() || "Untitled Document";
+        if (newTitle !== documentTitleInput) { // If only whitespace was trimmed
+            setDocumentTitleInput(newTitle);
+        }
+        if (currentDocumentId) { // Only save if it's an existing document
+            updateTitleInFirestore(newTitle);
+        }
+    };
+
+
+    const handleSave = async () => {
+        if (!user || !editorRef.current || isSaving) return;
+        setIsSaving(true);
+        showAlert("Saving...", "Please wait.", "loading", 0); 
+        
+        const editorContentHTML = editorRef.current.getContentHTML();
+        // const editorContentJSON = editorRef.current.getContentJSON(); // Alternative format
+
+        const titleToSave = documentTitleInput.trim() || "Untitled Document";
         
         const docData = {
             userId: user.uid,
             title: titleToSave,
-            h1Html: content.h1.html, h1Style: content.h1.style,
-            h2Html: content.h2.html, h2Style: content.h2.style,
-            pHtml: content.p.html, pStyle: content.p.style,
+            editorContent: editorContentHTML, // Save HTML content
+            // editorContent: editorContentJSON, // Or save JSON
             updatedAt: serverTimestamp(),
         };
 
         try {
+            let docIdToUpdate = currentDocumentId;
             if (currentDocumentId) {
                 await setDoc(doc(db, "documents", currentDocumentId), docData, { merge: true });
             } else {
@@ -78,74 +122,79 @@ const EditorPage = () => {
                     createdAt: serverTimestamp(),
                 });
                 setCurrentDocumentId(docRef.id);
+                docIdToUpdate = docRef.id;
             }
-            setCurrentDocumentTitle(titleToSave);
-            alert(`Document "${titleToSave}" saved successfully!`);
+            if (documentTitleInput !== titleToSave) setDocumentTitleInput(titleToSave);
+            showAlert("Success!", `Document "${titleToSave}" saved.`, "success");
         } catch (error) {
             console.error("Error saving document: ", error);
-            alert("Failed to save document.");
+            showAlert("Error", "Failed to save document.", "error");
         } finally {
-            setIsLoading(false);
+            setIsSaving(false);
+            // closeAlert() might happen too soon if showAlert has a timeout, handle carefully
+            if (alertState.type === 'loading') closeAlert();
         }
     };
     
     const handleLoadClick = async () => {
         if (!user) return;
-        setIsLoading(true);
+        showAlert("Loading Documents...", "Fetching your saved notes.", "loading", 0);
         try {
-            const q = query(collection(db, "documents"), where("userId", "==", user.uid));
+            const q = query(collection(db, "documents"), where("userId", "==", user.uid), where("title", "!=", null)); // Ensure title exists
             const querySnapshot = await getDocs(q);
-            const docs = querySnapshot.docs.map(doc => ({ id: doc.id, data: doc.data() }));
+            const docs = querySnapshot.docs.map(d => ({ id: d.id, data: d.data() }));
             setDocumentsList(docs.sort((a,b) => (b.data.updatedAt?.seconds || 0) - (a.data.updatedAt?.seconds || 0) ));
             setIsLoadModalVisible(true);
+            closeAlert();
         } catch (error) {
             console.error("Error fetching documents: ", error);
-            alert("Failed to fetch documents.");
-        } finally {
-            setIsLoading(false);
+            showAlert("Error", "Failed to fetch documents.", "error");
         }
     };
 
     const handleSelectDocument = (data, id, title) => {
         if (editorRef.current) {
-            editorRef.current.loadDocument(data);
+            // Assuming data.editorContent is HTML string for TipTap
+            editorRef.current.setContent(data.editorContent || '', 'html');
         }
         setCurrentDocumentId(id);
-        setCurrentDocumentTitle(title);
+        setDocumentTitleInput(title || "Untitled Document");
         setIsLoadModalVisible(false);
     };
 
     const handleDeleteDocument = async (docIdToDelete) => {
         if (!user || !docIdToDelete) return;
-        if (!window.confirm("Are you sure you want to delete this document? This action cannot be undone.")) return;
         
-        setIsLoading(true);
-        try {
-            await deleteDoc(doc(db, "documents", docIdToDelete));
-            setDocumentsList(prevDocs => prevDocs.filter(doc => doc.id !== docIdToDelete));
-            if (currentDocumentId === docIdToDelete) {
-                handleNew(); // Reset editor if current doc is deleted
-            }
-            alert("Document deleted successfully.");
-        } catch (error) {
-            console.error("Error deleting document: ", error);
-            alert("Failed to delete document.");
-        } finally {
-            setIsLoading(false);
-        }
+        showAlert(
+            "Confirm Deletion", 
+            `Are you sure you want to delete "${documentsList.find(d=>d.id === docIdToDelete)?.data.title || 'this document'}"? This cannot be undone.`,
+            "warning", 
+            0, // No auto-close
+            async () => { // onConfirm callback
+                closeAlert(); // Close the confirmation modal first
+                showAlert("Deleting...", "Please wait.", "loading", 0);
+                try {
+                    await deleteDoc(doc(db, "documents", docIdToDelete));
+                    setDocumentsList(prevDocs => prevDocs.filter(d => d.id !== docIdToDelete));
+                    if (currentDocumentId === docIdToDelete) handleNew();
+                    showAlert("Success", "Document deleted.", "success");
+                } catch (error) {
+                    console.error("Error deleting document: ", error);
+                    showAlert("Error", "Failed to delete document.", "error");
+                }
+            },
+            "Delete" // confirmText
+        );
     };
-
 
     const handleExport = () => {
         if (editorRef.current) {
-            const content = editorRef.current.getContent();
-            const loadedFontLinks = editorRef.current.getStylesForExport();
-            const convertStyleObjectToString = (styleObj) => Object.entries(styleObj).map(([key, value]) => `${key.replace(/([A-Z])/g, "-$1").toLowerCase()}: ${value};`).join(" ");
-            const htmlContent = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${currentDocumentTitle || "Exported Document"}</title>${loadedFontLinks}<style>body { margin: 20px; background-color: #1e1e1e; color: #d4d4d4; font-family: 'Poppins', sans-serif; } h1, h2, p { margin-bottom: 1em; }</style></head><body><h1 style="${convertStyleObjectToString(content.h1.style)}">${content.h1.html}</h1><h2 style="${convertStyleObjectToString(content.h2.style)}">${content.h2.html}</h2><p style="${convertStyleObjectToString(content.p.style)}">${content.p.html}</p></body></html>`;
+            const editorContentHTML = editorRef.current.getContentHTML();
+            const htmlContent = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${documentTitleInput || "Exported Document"}</title><style>body { margin: 20px; background-color: #1e1e1e; color: #d4d4d4; font-family: 'Inter', sans-serif; } .ProseMirror {outline: none;} /* Basic reset for ProseMirror wrapper if it's included */</style></head><body>${editorContentHTML}</body></html>`;
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `${(currentDocumentTitle || "document").replace(/[^a-z0-9]/gi, '_').toLowerCase()}.html`;
+            link.download = `${(documentTitleInput || "document").replace(/[^a-z0-9]/gi, '_').toLowerCase()}.html`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -156,18 +205,20 @@ const EditorPage = () => {
     const handleLogout = async () => {
         try {
             await signOut(auth);
+            // Navigation to '/' is handled by the auth state listener
         } catch (error) {
             console.error('Error signing out:', error);
+            showAlert("Error", "Failed to sign out.", "error");
         }
-        navigate('/');
     };
 
-    if (!user || isLoading) {
-        return <div className="loading-overlay">Loading Noted...</div>; // Basic loading state
+    if (isLoading && !user) { 
+      return <AlertModal isVisible={true} title="Loading" message="Initializing Noted..." type="loading" onClose={() => {}} />;
     }
 
     return (
         <div className='editor-page'>
+            <AlertModal {...alertState} onClose={closeAlert} />
             <div className='banner'>
                 <Navbar 
                     onNew={handleNew}
@@ -175,6 +226,17 @@ const EditorPage = () => {
                     onSave={handleSave}
                     onLoad={handleLoadClick}
                     onLogout={handleLogout}
+                />
+            </div>
+            <div className="document-title-bar">
+                <input 
+                    type="text" 
+                    className="document-title-input-field"
+                    value={documentTitleInput}
+                    onChange={handleTitleInputChange}
+                    onBlur={handleTitleInputBlur}
+                    placeholder="Untitled Document"
+                    disabled={isSaving}
                 />
             </div>
             <section className='content'>

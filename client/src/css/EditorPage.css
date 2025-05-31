@@ -1,4 +1,6 @@
-@import url('../css/fonts.css');
+/* EditorPage.css */
+
+@import url('../css/fonts.css'); /* Consider moving global imports to App.jsx or index.html */
 
 html {
   box-sizing: border-box;
@@ -39,42 +41,88 @@ body {
 }
 
 .editor-page > .banner {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: auto; /* Determined by Navbar content */
   z-index: 1000;
-  background-color: #000;
+  background-color: #000; /* Match Navbar bg if transparent */
 }
 
+/* New Title Bar Styling */
+.document-title-bar {
+  position: fixed; /* Fixed below the main navbar */
+  top: 50px; /* Adjust based on your Navbar's actual height. Assumes Navbar is approx 50px */
+  left: 0;
+  width: 100%;
+  background-color: #101010; /* Slightly different from editor toolbar for separation */
+  padding: 8px 5%; /* Horizontal padding to align with content */
+  box-sizing: border-box;
+  z-index: 999; /* Below main navbar, above content */
+  border-bottom: 1px solid #282828;
+}
+
+.document-title-input-field {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 6px 2px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+.document-title-input-field:focus {
+  /* Optional: add a subtle focus indicator if desired */
+  /* box-shadow: 0 1px 0 0 rgba(50, 200, 255, 0.7); */
+}
+
+
 .editor-page > .content {
-  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   flex: 1;
-  padding: 20px 5%;
+  /* Increased top padding to account for Navbar AND TitleBar */
+  padding: 100px 5% 20px 5%; /* Approx 50px (Navbar) + 50px (TitleBar) */
   overflow-y: auto;
   box-sizing: border-box;
 }
 
 .editor-page > .footer {
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
   background-color: #080808;
   padding: 0;
   z-index: 900;
 }
 
 @media screen and (max-width: 768px) {
+  .document-title-bar {
+    top: 48px; /* Adjust if navbar height changes on mobile */
+    padding: 6px 3%;
+  }
+  .document-title-input-field {
+    font-size: 1.1em;
+  }
   .editor-page > .content {
-    padding: 0 3% 15px 3%;
+    padding: 90px 3% 15px 3%; /* Adjust based on combined height */
   }
 }
 
 @media screen and (max-width: 480px) {
+   .document-title-bar {
+    top: 45px; /* Adjust if navbar height changes on mobile */
+    padding: 5px 10px;
+  }
+  .document-title-input-field {
+    font-size: 1em;
+  }
   .editor-page > .content {
-    padding: 0 10px 15px 10px;
+    padding: 85px 10px 15px 10px; /* Adjust based on combined height */
   }
 }
